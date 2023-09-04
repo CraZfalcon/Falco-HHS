@@ -1,5 +1,4 @@
-#pragma warning(disable : 4996)
-#include <stdio.h>
+/*#include <stdio.h>
 
  int main(void) {
 	int a, b;
@@ -13,14 +12,10 @@
 	printf("\nSluit dit venster door op enter te drukken");
 	getchar();
 	return 0;
-}
-
- /*#pragma warning(disable : 4996)
+}*/
+#pragma warning(disable : 4996)
 #include <stdio.h>
 #include <math.h>
-
- // For Visual Studio
-#pragma warning(disable : 4996)
 
  int main(void) {
 	 double x, y, wortel, macht;
@@ -29,13 +24,13 @@
 	 scanf("%lf", &x);
 	 printf("Voer een getal y in: ");
 	 scanf("%lf", &y);
-	 for (i = 0; i < 5; i = i + 1) {
+	 for (i = 0; i < 5; i++){
 		 wortel = sqrt(x);
 		 macht = pow(x, y);
 		 printf("De vierkantswortel uit %f is: %f\n", x, wortel);
 		 printf("%f tot de macht %f is: %f\n", x, y, macht);
-		 x = x + 1;
+		 x++;
 	 }
 	 getchar();
 	 return 0;
- }*/
+ }
