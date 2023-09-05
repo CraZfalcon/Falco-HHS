@@ -13,11 +13,7 @@
 	getchar();
 	return 0;
 }*/
-#pragma warning(disable : 4996)
-#include <stdio.h>
-#include <math.h>
-
- int main(void) {
+ /*int main(void) {
 	 double x, y, wortel, macht;
 	 int i;
 	 printf("Voer een positief getal x in: ");
@@ -33,4 +29,31 @@
 	 }
 	 getchar();
 	 return 0;
- }
+ }*/
+#pragma warning(disable : 4996)
+#include <stdio.h>
+#include <math.h>
+
+int a, i, b;
+int main(void) {
+
+	while (1 == 1)
+	{
+		printf("Geef een getal: ");
+		scanf_s("%d", &a);
+		printf("Hoe vaak?: ");
+		scanf_s("%d", &b);
+		printf("\n");
+		if(a * b < 10000){
+			for (i = 1; i <= b; i++) {
+				printf("%5d x %5d = %5d\n", a, i, a * i);
+
+			}
+		}
+		else {
+			printf("Te groot getal");
+			printf("\n");
+		}
+		printf("\n");
+	}
+}
