@@ -46,7 +46,7 @@ int main(void) {
 		printf("\n");
 		if(a * b < 10000){
 			for (i = 1; i <= b; i++) {
-				printf("%5d x %5d = %5d\n", a, i, a * i);
+				printf("%4d x %4d = %4d\n", a, i, a * i);
 
 			}
 		}
