@@ -31,22 +31,24 @@
 	 return 0;
  }*/
 #pragma warning(disable : 4996)
-#include <stdio.h>
+/*#include <stdio.h>
 #include <math.h>
 
-int a, i, b;
+float a;
+int i, b;
+
 int main(void) {
 
 	while (1 == 1)
 	{
 		printf("Geef een getal: ");
-		scanf_s("%d", &a);
+		scanf_s("%f", &a);
 		printf("Hoe vaak?: ");
 		scanf_s("%d", &b);
 		printf("\n");
 		if(a * b < 10000){
 			for (i = 1; i <= b; i++) {
-				printf("%4d x %4d = %4d\n", a, i, a * i);
+				printf("%4f x %4f = %4f\n", a, i, a * i);
 
 			}
 		}
@@ -55,5 +57,83 @@ int main(void) {
 			printf("\n");
 		}
 		printf("\n");
+	}
+}*/
+
+#include <stdio.h>
+
+int a;
+
+
+int main(void) {
+
+	while(1 == 1){
+		printf("enter number: ");
+		scanf("%d", &a);
+
+		switch (a)
+		{
+		case 1:
+			printf("urmom \n");
+			break;
+		case 2:
+			printf("urdad \n");
+			break;
+		case 3:
+			printf("uruncle \n");
+			break;
+		case 4:
+			printf("uraunt \n");
+			break;
+		case 5:
+			printf("urgrandma \n");
+			break;
+		case 6:
+			printf("urgrandpa \n");
+			break;
+		case 7:
+			printf("urcousin \n");
+			break;
+		case 8:
+			printf("ursister \n");
+			break;
+		case 9:
+			printf("urbrother \n");
+			break;
+		case 10:
+			printf("urwife \n");
+			break;
+		case 11:
+			printf("urhusband \n");
+			break;
+		case 12:
+			printf("urson \n");
+			break;
+		case 13:
+			printf("urdaughter \n");
+			break;
+		case 14:
+			printf("ursoninlaw \n");
+			break;
+		case 15:
+			printf("urdaughterinlaw \n");
+			break;
+		case 16:
+			printf("urgrandson \n");
+			break;
+		case 17:
+			printf("urgranddaughter \n");
+			break;
+		case 18:
+			printf("urgrandsoninlaw \n");
+			break;
+		case 19:
+			printf("urgranddaughterinlaw \n");
+			break;
+		default:
+			printf("nobody in your family");
+			break;
+		}
+	printf("\n");
 	}
 }
