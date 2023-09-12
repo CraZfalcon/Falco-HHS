@@ -60,7 +60,7 @@ int main(void) {
 	}
 }*/
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int a;
 
@@ -136,4 +136,34 @@ int main(void) {
 		}
 	printf("\n");
 	}
+}*/
+
+#import <stdio.h>
+
+/*
+int seconds = (totalSeconds % 60);
+int minutes = (totalSeconds % 3600) / 60;
+int hours = (totalSeconds % 86400) / 3600;
+int days = (totalSeconds % (86400 * 30)) / 86400;
+*/
+
+
+int main(void) {
+
+	int totalSeconds = 0;
+	int seconds = 0;
+	int minutes = 0;
+	int hours = 0;
+	int days = 0;
+	int weeks = 0;
+
+	printf("Enter the number of seconds: ");
+	scanf("%d", &totalSeconds);
+
+	seconds = (totalSeconds % 60);
+	minutes = (totalSeconds % 3600) / 60;
+	hours = (totalSeconds % 86400) / 3600;
+	days = (totalSeconds % (86400 * 30)) / 86400;
+
+	printf("%d days, %d hours, %d minutes, %d seconds\n", days, hours, minutes, seconds);
 }
