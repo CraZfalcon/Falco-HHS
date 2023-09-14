@@ -148,7 +148,7 @@ int days = (totalSeconds % (86400 * 30)) / 86400;
 */
 
 
-int main(void) {
+/*int main(void) {
 
 	int totalSeconds = 0;
 	int seconds = 0;
@@ -166,4 +166,14 @@ int main(void) {
 	days = (totalSeconds % (86400 * 30)) / 86400;
 
 	printf("%d days, %d hours, %d minutes, %d seconds\n", days, hours, minutes, seconds);
+}*/
+
+int faculteit;
+
+int main(void) {
+	while (1 == 1) {
+		for (int i = 0; i < faculteit; i++) {
+
+		}
+	}
 }
