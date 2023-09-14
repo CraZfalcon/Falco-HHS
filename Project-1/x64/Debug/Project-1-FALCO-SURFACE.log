@@ -1,0 +1,4 @@
+﻿  Probeersel1.c
+C:\Users\falco\OneDrive\AB - 01 - PCB & Code\Github\Falco-HHS\Project-1\Probeersel1.c(155,22): warning C4098: 'optellen': 'void' function returning a value
+  LINK : C:\Users\falco\OneDrive\AB - 01 - PCB & Code\Github\Falco-HHS\Project-1\x64\Debug\Project-1.exe not found or not built by the last incremental link; performing full link
+  Project-1.vcxproj -> C:\Users\falco\OneDrive\AB - 01 - PCB & Code\Github\Falco-HHS\Project-1\x64\Debug\Project-1.exe
