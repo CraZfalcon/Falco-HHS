@@ -14,7 +14,11 @@ int strlen(char* str) {
 
 int main(void) {
 
-	for (int i = 0; i < strlen(raw); i++) printf("%c", raw[strlen(raw) - i - 1]);
+	int index;
+	for (index = 0; raw[index] != '\0'; index++);
+	for (int i = 0; i < index - 1; i++) printf("%c", raw[index - i]);
+
+	//for (int i = 0; i < strlen(raw); i++) printf("%c", raw[strlen(raw) - i - 1]);
 
 	/*
 	
