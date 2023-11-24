@@ -5,7 +5,7 @@
 
 int main(void) {
 
-		FILE* filePointer;
+		/*/FILE* filePointer;
 
 		char buffer[100] = "";
 		const char adress1 [] = "C:\\Users\\falco\\OneDrive\\AB - 01 - PCB & Code\\Github\\Falco-HHS\\CPRO-PR1-2\\Tekst1.txt";
@@ -19,10 +19,21 @@ int main(void) {
 		if (filePointer == NULL) { printf("File not found\n\n"); }
 		else fscanf(filePointer, "%s", buffer);
 
-		printf("\n\n%s\n\n", buffer);
+		printf("\n\n%s\n\n", buffer);*/
 
+
+	FILE* filePointer;
+	char buffer[100] = "";
+	filePointer = fopen("C:\\Users\\falco\\Desktop\\test.txt", "r");
+	for (int i = 0; i < 120; i++) {
+		//fprintf(filePointer, "regel nummer %d\n", i);
+		fscanf(filePointer, "%s", buffer);
+		printf("%s\n", buffer);
+	}
+	return 0;
 
 }
+
 
 
 /*void old() {
