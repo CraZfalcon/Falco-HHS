@@ -5,7 +5,11 @@
 
 int main(void) {
 
+<<<<<<< Updated upstream
 		/*/FILE* filePointer;
+=======
+		FILE* filePointer;
+>>>>>>> Stashed changes
 
 		char buffer[100] = "";
 		const char adress1 [] = "C:\\Users\\falco\\OneDrive\\AB - 01 - PCB & Code\\Github\\Falco-HHS\\CPRO-PR1-2\\Tekst1.txt";
@@ -19,6 +23,7 @@ int main(void) {
 		if (filePointer == NULL) { printf("File not found\n\n"); }
 		else fscanf(filePointer, "%s", buffer);
 
+<<<<<<< Updated upstream
 		printf("\n\n%s\n\n", buffer);*/
 
 
@@ -36,6 +41,14 @@ int main(void) {
 
 
 
+=======
+		printf("\n\n%s\n\n", buffer);
+
+
+}
+
+
+>>>>>>> Stashed changes
 /*void old() {
 	printf("Enter the document name: ");
 	scanf("%s", &docName);
