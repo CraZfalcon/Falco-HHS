@@ -1,0 +1,7 @@
+﻿  Test3.cpp
+C:\Users\falco\OneDrive\AB - 01 - PCB & Code\Github\Falco-HHS\CPROUC-Test3\Test3.cpp(111,15): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\falco\OneDrive\AB - 01 - PCB & Code\Github\Falco-HHS\CPROUC-Test3\Test3.cpp(118,15): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\falco\OneDrive\AB - 01 - PCB & Code\Github\Falco-HHS\CPROUC-Test3\Test3.cpp(166,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\falco\OneDrive\AB - 01 - PCB & Code\Github\Falco-HHS\CPROUC-Test3\Test3.cpp(196,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\falco\OneDrive\AB - 01 - PCB & Code\Github\Falco-HHS\CPROUC-Test3\Test3.cpp(600,29): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  CPROUC-Test3.vcxproj -> C:\Users\falco\OneDrive\AB - 01 - PCB & Code\Github\Falco-HHS\CPROUC-Test3\x64\Debug\CPROUC-Test3.exe
