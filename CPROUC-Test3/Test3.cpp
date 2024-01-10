@@ -1,69 +1,9 @@
-/*#include <stdio.h>
-#include <stdlib.h>
-
-struct substitutieStruct {
-    double x;
-    double y;
-};
-
-struct substitutieStruct substitutieFunctie();
-
-int main() {
-    struct substitutieStruct s;
-
-    s = substitutieFunctie();
-
-    printf("\nX: %lf \nY: %lf", s.x, s.y);
-
-    return 0;
-}
-
-//case x: struct substitutieStruct substitutieFunctie()
-
-struct substitutieStruct substitutieFunctie() {
-    struct substitutieStruct s1;
-
-    double a1 = 0;
-    double b1 = 0;
-    double c1 = 0;
-    double a2 = 0;
-    double b2 = 0;
-    double c2 = 0;
-    double d = 0;
-
-    printf("Geef a1:\n");
-    scanf_s("%lf", &a1);
-    printf("Geef b1:\n");
-    scanf_s("%lf", &b1);
-    printf("Geef c1:\n");
-    scanf_s("%lf", &c1);
-    printf("Geef a2:\n");
-    scanf_s("%lf", &a2);
-    printf("Geef b2:\n");
-    scanf_s("%lf", &b2);
-    printf("Geef c2:\n");
-    scanf_s("%lf", &c2);
-
-    d = a1 * b2 - a2 * b1;
-    if (d == 0) {
-        printf("\nEr is geen uitkomst mogelijk\n\n");
-        exit(1);
-    }
-    else {
-        s1.x = (b2 * c1 - b1 * c2) / d;
-        s1.y = (a1 * c2 - a2 * c1) / d;
-    }
-
-    return s1;
-}*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
-#define X 1
-#define Y 2
-#define Z 3
+#pragma warning(disable : 4244)
 
 struct substitutieStruct {
     double x;
@@ -384,7 +324,7 @@ struct substitutieStruct substitutieFunctie() {
         uitkomsten.y = (a1 * c2 - a2 * c1) / d;
     }
 
-    return uitkomsten;
+    return (uitkomsten);
 }
 
 
@@ -406,7 +346,7 @@ int tafel(int doorWerkGetal) {
     for (int tafel_getal = 1; tafel_getal <= operant; tafel_getal = tafel_getal + 1) {
         printf("%d x %d = %d\n", tafel_getal, doorWerkGetal, doorWerkGetal * tafel_getal);
     }
-    return (fouten);
+    return 1;
 }
 
 int maand(int doorWerkGetal) {
@@ -438,7 +378,7 @@ int maand(int doorWerkGetal) {
     case 12: printf("\nDe maand De maand is December\n\n"); break;
     default: printf("\nEr ging iets fout\n\n"); break;
     }
-    return (fouten);
+    return 1;
 }
 
 int deelbaarDoor(int doorWerkGetal) {
@@ -455,7 +395,7 @@ int deelbaarDoor(int doorWerkGetal) {
         opslag = opslag + 1;
     }
     printf("\n");
-    return (fouten);
+    return 1;
 }
 
 int evenOfOneven(int doorWerkGetal) {
@@ -466,7 +406,7 @@ int evenOfOneven(int doorWerkGetal) {
     else {
         printf("%d is een oneven getal\n\n", doorWerkGetal);
     }
-    return (fouten);
+    return 1;
 }
 
 int sorteren(int doorWerkGetal, int operatie) {
@@ -520,7 +460,7 @@ int sorteren(int doorWerkGetal, int operatie) {
             printf("%d    %lf\n", i, ary[j]);
         }
     }
-    return (fouten);
+    return 1;
 }
 
 int decimaalNaarBinair(int doorWerkGetal) {
@@ -540,7 +480,7 @@ int decimaalNaarBinair(int doorWerkGetal) {
     } while (counter >= 2);
 
     printf("\n\n");
-    return(fouten);
+    return 1;
 }
 
 int decimaalNaarHexaDecimaal(int doorWerkGetal) {
@@ -573,7 +513,7 @@ int decimaalNaarHexaDecimaal(int doorWerkGetal) {
     } while (counter >= 2);
 
     printf("\n\n");
-    return(fouten);
+    return 1;
 }
 
 int binairNaarDecimaal(int doorWerkGetal) {
@@ -593,7 +533,12 @@ int binairNaarDecimaal(int doorWerkGetal) {
     printf("\nVul het binaire getal, getal voor getal in:\n");
 
     for (int counter = 1; counter <= hoeveelheid; counter++) {
-        scanf_s("%d", &ary[counter]);
+        while (1) {
+            scanf_s("%d", &ary[counter]);
+            if (ary[counter] == 1 || ary[counter] == 0) { break; }
+            printf("\nOngeldig antwoord, probeer het opnieuw.\n\n");
+            fouten++;
+        }
     }
 
     for (int counter = 1; counter <= hoeveelheid; counter++) {
@@ -602,7 +547,55 @@ int binairNaarDecimaal(int doorWerkGetal) {
 
     printf("\n\nhet decimale getal is %d\n\n\n", uitkomst);
 
-    return(fouten);
+    return 1;
+}
+
+int hexaDecimaalNaarDecimaal(int doorWerkGetal) {
+    int fouten = 0;
+    char ary[100]{ NULL };
+    int hoeveelheid = (sizeof ary / sizeof ary[0]);
+    int uitkomst = 0;
+
+    while (1) {
+        printf("\nVul het hexadecimale getal, teken voor teken in:\n");
+        scanf_s("%[^\n]%c", &ary);
+
+        for (int counter = 0; counter <= hoeveelheid; counter++) {
+            switch (ary[counter]) {
+            case '0': ary[counter] = 0; break;
+            case '1': ary[counter] = 1; break;
+            case '2': ary[counter] = 2; break;
+            case '3': ary[counter] = 3; break;
+            case '4': ary[counter] = 4; break;
+            case '5': ary[counter] = 5; break;
+            case '6': ary[counter] = 6; break;
+            case '7': ary[counter] = 7; break;
+            case '8': ary[counter] = 8; break;
+            case '9': ary[counter] = 9; break;
+            case 'a':
+            case 'A': ary[counter] = 10; break;
+            case 'b':
+            case 'B': ary[counter] = 11; break;
+            case 'c':
+            case 'C': ary[counter] = 12; break;
+            case 'd':
+            case 'D': ary[counter] = 13; break;
+            case 'e':
+            case 'E': ary[counter] = 14; break;
+            case 'f':
+            case 'F': ary[counter] = 15; break;
+            default: printf("\n\nEr ging iets fout\n\n"); fouten++; break;
+            }
+        }
+    }
+
+    for (int counter = 0; counter <= hoeveelheid; counter++) {
+        uitkomst = uitkomst + (ary[counter] * (pow(16, (hoeveelheid - counter))));
+    }
+
+    printf("\n\nhet decimale getal is %d\n\n\n", uitkomst);
+
+    return uitkomst;
 }
 
 
@@ -610,7 +603,7 @@ int binairNaarDecimaal(int doorWerkGetal) {
 int main(void) {
     int uitkomst = 0;
 
-    printf("Welkom bij de nieuwe verbeterde rekenmachine\n");
+    printf("Welkom bij de rekenmachine\n");
     while (1) {
         int doorRekenGetal = 0;
         printf("Voer een geheel getal in\n");
@@ -628,14 +621,14 @@ int main(void) {
                 printf("\n24 voor binair naar decimaal\n\n");
                 scanf_s("%d", &operatie);
 
-                if (operatie >= 1 && operatie <= 24) {
+                if (operatie >= 1 && operatie <= 28) {
                     break;
                 }
 
                 printf("Ongeldig antwoord, probeer het opnieuw.\n");
             }
 
-            if (operatie >= 1 && operatie <= 25) {
+            if (operatie >= 1 && operatie <= 28) {
 
                 switch (operatie) {
                 case 1: printf("De uitkomst is %d\n\n", plus(doorRekenGetal)); break;
@@ -656,21 +649,22 @@ int main(void) {
                 case 16: struct abcFormuleStruct s16; s16 = abcFormuleFunctie(); printf("X = %lf \nY = %lf\n Determinant = %lf\n\n", s16.x, s16.y, s16.d); break;
                 case 17: printf("het gemiddelde is %d", gemiddelde(doorRekenGetal)); break;
                 case 18: struct substitutieStruct s18; s18 = substitutieFunctie(); printf("X = %lf \nY = %lf\n\n", s18.x, s18.y); break;
-                case 19: printf("Het programma is afgelopen\n fouten: %d\n\n", tafel(doorRekenGetal)); break;
-                case 20: printf("Het programma is afgelopen\n fouten: %d\n\n", maand(doorRekenGetal)); break;
-                case 21: printf("Het programma is afgelopen\n fouten: %d\n\n", deelbaarDoor(doorRekenGetal)); break;
-                case 22: printf("Het programma is afgelopen\n fouten: %d\n\n", evenOfOneven(doorRekenGetal)); break;
-                case 23: printf("Het programma is afgelopen\n fouten: %d\n\n", sorteren(doorRekenGetal, operatie)); break;
-                case 24: printf("Het programma is afgelopen\n fouten: %d\n\n", sorteren(doorRekenGetal, operatie)); break;
-                case 25: printf("Het programma is afgelopen\n fouten: %d\n\n", decimaalNaarBinair(doorRekenGetal)); break;
-                case 26: printf("Het programma is afgelopen\n fouten: %d\n\n", decimaalNaarHexaDecimaal(doorRekenGetal)); break;
-                case 27: printf("Het programma is afgelopen\n fouten: %d\n\n", binairNaarDecimaal(doorRekenGetal)); break;
+                case 19: tafel(doorRekenGetal); printf("Het programma is afgelopen\n\n"); break;
+                case 20: maand(doorRekenGetal); printf("Het programma is afgelopen\n\n"); break;
+                case 21: deelbaarDoor(doorRekenGetal); printf("Het programma is afgelopen\n\n"); break;
+                case 22: evenOfOneven(doorRekenGetal); printf("Het programma is afgelopen\n\n"); break;
+                case 23: sorteren(doorRekenGetal, operatie); printf("Het programma is afgelopen\n\n"); break;
+                case 24: sorteren(doorRekenGetal, operatie); printf("Het programma is afgelopen\n\n"); break;
+                case 25: decimaalNaarBinair(doorRekenGetal); printf("Het programma is afgelopen\n\n"); break;
+                case 26: decimaalNaarHexaDecimaal(doorRekenGetal); printf("Het programma is afgelopen\n\n"); break;
+                case 27: binairNaarDecimaal(doorRekenGetal); printf("Het programma is afgelopen\n\n"); break;
+                case 28: hexaDecimaalNaarDecimaal(doorRekenGetal); printf("Het programma is afgelopen\n\n"); break;
                 default: printf("Er ging iets fout\n\n"); break;
                 }
             }
 
             int teruggaanNaar = 0;
-            while (operatie <= 25) {
+            while (operatie <= 28) {
                 printf("Voer in: 1 om opnieuw te rekenen, 2 om door te rekenen met dit getal of op 3 om af te sluiten\n");
                 scanf_s("%d", &teruggaanNaar);
 
@@ -680,7 +674,7 @@ int main(void) {
                 printf("Ongeldig antwoord, probeer het opnieuw\n");
             }
 
-            while (operatie >= 18 && operatie <= 25) {
+            while (operatie >= 18 && operatie <= 28) {
                 printf("Voer in: 1 om opnieuw te rekenen of 2 om af te sluiten\n");
                 scanf_s("%d", &teruggaanNaar);
 
@@ -690,7 +684,7 @@ int main(void) {
                 printf("Ongeldig antwoord, probeer het opnieuw.\n");
             }
 
-            if (teruggaanNaar == 1 && operatie <= 25) {
+            if (teruggaanNaar == 1 && operatie <= 28) {
                 break;
             }
             else if (teruggaanNaar == 2 && operatie <= 18) {
