@@ -9,7 +9,7 @@ decode_results results;
 void setup(){
   Serial.begin(9600);
   irrecv.enableIRIn();
-  irrecv.blink13(true);
+  //irrecv.blink13(true);
   servo.attach(12);
 }
 
@@ -20,5 +20,4 @@ void loop(){
     servo.write(serVal);
     irrecv.resume();
   }
-  delay(100);
 }
